@@ -1,0 +1,273 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <link rel="stylesheet" type="text/css" href="./libs/bootstrap/css/bootstrap.css">
+    <link rel='stylesheet' href='/stylesheets/style.css' />
+    <link href="//maxcdn.bootstrapcdn.com/font-awesome/4.2.0/css/font-awesome.min.css" rel="stylesheet">
+    <link rel="stylesheet" type="text/css" href="http://fonts.googleapis.com/css?family=Open+Sans|Lato:300, 400, 700">
+    <script src="./libs/jquery-1.11.1.min.js"></script>
+    <script src="./libs/jquery-ui.min.js"></script>
+    <script src="./libs/bootstrap/js/bootstrap.min.js"></script>
+    <script src="./javascripts/gameScript.js"></script>
+  </head>
+  <title>LinguaGem</title>
+  <body>
+  
+  <div class="nav-container">
+    <a href="./game" id="gameNav">play</a>
+    <a href="./" id="homeNav">LinguaGem</a>
+    <a href="./language" id="languageNav">learn</a>
+  </div>
+    
+    <%if (!hasQuery){%>
+    <div class="pickContainer">
+    <div class="gLanguages">
+      <div class="pickHead">Select language(s) to <i>play</i></div>
+      <div class="pickTable">
+        <%for (var i=0; i<8; i++){%>
+          <div class="choiceRow">
+            <%for (var j=i*8; j<(i*8)+8; j++){%>
+              <%if (j<61){%>
+                <div class="choiceItem">
+                  <div class="language-container">
+                    <form>
+                      <%if (languageArray[j]==="Chinese Simplified"){%>
+                        <div class="language-choice">Chinese(S)</div>
+                      <%}else if (languageArray[j]==="Chinese Traditional"){%>
+                        <div class="language-choice">Chinese(T)</div>
+                      <%}else{%>
+                        <div class="language-choice"><%=languageArray[j]%></div>
+                      <%}%>
+                    </form>
+                  </div>
+                </div>
+              <%}%>
+            <%}%>
+          </div>
+        <%}%>
+      </div>
+    </div>
+    </div>
+
+    <%}else{%>
+      <div class="gameContainer">
+      <div class="question-container">
+
+      <%if (whichGame==="questionsGame2"){%>
+        <%if (!isComplete){%>
+          <%if (randomGameData.forward){%>
+            <div class="gameHead">Translate <b><%=randomGameData.commonPhraseEnglish%></b> to <%=randomGameData.languageName%></div>        
+          <%}else{%>
+            <div class="gameHead">Translate <b><%=randomGameData.commonPhraseOtherLanguage%></b> to English
+            <button type='submit' class='textToVoice-buttonGame top' id="game2button" rel='noreferrer' value='<%=randomGameData.commonPhraseOtherLanguage%>'>
+             <input type="hidden" name="languageCode" value="<%=LanguageCodes[randomGameData.languageName]%>">
+                &#xf028;
+            </button>
+            </div>
+          <%}%>
+          
+          <div class="translate-container">
+            <form class="translate-form form-inline" id="g1a-container" action="game/submitAnswer" method="post">
+            <div class="input-group">
+              <input type="text" name="submittedAnswer" class="form-control" id="transAnswer">
+              <input type="hidden" name="correctAnswer" value="<%=randomGameData.id%>">
+              <input type="hidden" name="whichLanguage" value="<%=randomGameData.languageName%>">
+              <input type="hidden" name="whichGame" value="<%=whichGame%>">
+              <button type="submit" class="submit-button input-group-addon">Submit</button>
+            </div>
+            </form>
+
+          </div>
+          <div class="correct-answer-container">
+            <p class="answer-message">That's right!</p>
+            <div class="next-container">
+              <div class="nextSurround">
+              <a href="/game?whichLanguage=<%=randomGameData.languageName%>&whichGame=<%=whichGame%>" id="nextLink">
+                <i class="fa fa-chevron-right" id="nextArrow"></i><p id="nextWords">Next</p>
+              </a>
+              </div>
+            </div>
+          </div>
+          <div class="incorrect-answer-container">
+            <div class="next-container">
+              <div class="nextSurround1">
+              <a href="/game?whichLanguage=<%=randomGameData.languageName%>&whichGame=<%=whichGame%>" id="nextLink">
+                <i class="fa fa-chevron-right" id="nextArrow1"></i><p id="nextWords1">Next</p>
+              </a>
+              </div>
+            </div>
+          </div>
+
+          <div class="in-game-progress">
+            <p>Progress:</p>
+            <progress value="<%=progress%>" max="1" id='game-progress'></progress>
+            <p id="percentage"><%=(progress*100).toFixed(2)%>%</p>
+          </div>
+
+        <%}%>
+        <%if (isComplete){%>
+          <div class="finisHead">Congratulations, you finished the <%=whichLanguage%> learning sequence!<br /> You're as rare as a Pink Star Diamond!<a href="http://www.discovery.com/tv-shows/game-of-stones/pink-star-diamond/">*</a></div>
+          <p id="goAgain">Would you like to go again?</p>
+          <div class="start-over-container">
+            <form class="start-over" action="game/startOver" method="post">
+              <input type="hidden" name="whichGame" value="questionsGame2">
+              <input type="hidden" name="whichLanguage" value="<%=whichLanguage%>">
+              <button type="submit" class="again-button">Again! Again!</button>
+            </form>
+          </div>
+        <%}%>
+      <%}%>
+
+      <%if (whichGame=="questionsGame1"){%>
+        <%if (!isComplete){%>
+          <%if ("triviaQuestion" in randomGameData){%>
+            <div class="gameHead"><%=randomGameData.triviaQuestion%></div>
+            <%var optionsWithoutQuestionMark = options%>
+          <%}else{%>
+            <%if (randomGameData.forward){%>
+              <%if (randomGameData.commonPhraseEnglish.substring(randomGameData.commonPhraseEnglish.length-1)==="?"){%>
+                <%var commonPhraseQuestion = randomGameData.commonPhraseEnglish.substring(0,randomGameData.commonPhraseEnglish.length-1)%>
+              <%}else{%>
+                <%var commonPhraseQuestion = randomGameData.commonPhraseEnglish%>
+              <%}%>
+              <div class="gameHead">How would you say <b><%=commonPhraseQuestion%> </b>  in <%=randomGameData.languageName%>?</div>
+            <%}else{%>
+              <%if (randomGameData.commonPhraseOtherLanguage.substring(randomGameData.commonPhraseOtherLanguage.length-1)==="?"){%>
+                <%var commonPhraseQuestion = randomGameData.commonPhraseOtherLanguage.substring(0,randomGameData.commonPhraseOtherLanguage.length-1)%>
+              <%}else if (randomGameData.commonPhraseOtherLanguage.substring(0,1)==='¿'){%>
+                <%var commonPhraseQuestion = randomGameData.commonPhraseOtherLanguage.substring(1,randomGameData.commonPhraseOtherLanguage.length-1)%>
+              <%}else{%>
+                <%var commonPhraseQuestion = randomGameData.commonPhraseOtherLanguage%>
+              <%}%>
+              <div class="gameHead">How would you say <b><%=commonPhraseQuestion%> </b>  in English?
+              <button type='submit' class='textToVoice-buttonGame top' rel='noreferrer' value='<%=randomGameData.commonPhraseOtherLanguage%>'>
+             <input type="hidden" name="languageCode" value="<%=LanguageCodes[randomGameData.languageName]%>">
+             &#xf028;
+            </button>
+          </div>
+            <%}%>
+
+            <%var optionsWithoutQuestionMark=[]%>
+            <%for (var i=0;i<options.length;i++){%>
+              <%if (options[i].substring(options[i].length-1)==='?'){%>
+                <%if (options[i].substring(0,1)==='¿'){%>
+                  <%optionsWithoutQuestionMark.push(options[i].substring(1,options[i].length-1))%>
+                <%}else{%>
+                  <%optionsWithoutQuestionMark.push(options[i].substring(0,options[i].length-1))%>
+                <%}%>
+              <%}else{%>
+                <%optionsWithoutQuestionMark.push(options[i])%>
+              <%}%>
+            <%}%>
+          <%}%>
+
+          <div class="livesAndScore"><p class="current-score">Score: <%=currentScore*25%></p><p class="current-lives">Lives: <%=currentLives%></p></div>
+
+          <div class="translate-container" id="options-container">
+            <div>
+              <form class="translate-form" action="game/submitAnswer" method="post">
+                <input  class="option" id="a1" type="submit" value="<%=optionsWithoutQuestionMark[0]%>"> 
+                <input type="hidden" name="correctAnswer" value="<%=randomGameData.id%>">
+                <input type="hidden" name="whichLanguage" value="<%=randomGameData.languageName%>">
+                <input type="hidden" name="whichGame" value="<%=whichGame%>">
+                <input type="hidden" name="submittedAnswer" value="<%=options[0]%>">
+              </form>
+              <%if (randomGameData.forward){%>
+              <button type='submit' class='textToVoice-buttonGame option' rel='noreferrer' value='<%=optionsWithoutQuestionMark[0]%>'>
+              <input type="hidden" name="languageCode" value="<%=LanguageCodes[randomGameData.languageName]%>">
+              &#xf028;
+              </button>
+              <%}%>
+            </div>
+            <div>
+              <form class="translate-form" action="game/submitAnswer" method="post">
+                <input class="option" id="a2" type="submit" value="<%=optionsWithoutQuestionMark[1]%>">
+                <input type="hidden" name="correctAnswer" value="<%=randomGameData.id%>">
+                <input type="hidden" name="whichLanguage" value="<%=randomGameData.languageName%>">
+                <input type="hidden" name="whichGame" value="<%=whichGame%>">
+                <input type="hidden" name="submittedAnswer" value="<%=options[1]%>">
+              </form>
+              <%if (randomGameData.forward){%>
+              <button type='submit' class='textToVoice-buttonGame option' rel='noreferrer' value='<%=optionsWithoutQuestionMark[1]%>'>
+              <input type="hidden" name="languageCode" value="<%=LanguageCodes[randomGameData.languageName]%>">
+              &#xf028;
+              </button>
+              <%}%>
+            </div>
+            <div>
+              <form class="translate-form" action="game/submitAnswer" method="post">
+                <input class="option" id="a3" type="submit" value="<%=optionsWithoutQuestionMark[2]%>">
+                <input type="hidden" name="correctAnswer" value="<%=randomGameData.id%>">
+                <input type="hidden" name="whichLanguage" value="<%=randomGameData.languageName%>">
+                <input type="hidden" name="whichGame" value="<%=whichGame%>">
+                <input type="hidden" name="submittedAnswer" value="<%=options[2]%>">
+              </form>
+              <%if (randomGameData.forward){%>
+             <button type='submit' class='textToVoice-buttonGame option' rel='noreferrer' value='<%=optionsWithoutQuestionMark[2]%>'>
+              <input type="hidden" name="languageCode" value="<%=LanguageCodes[randomGameData.languageName]%>">
+                &#xf028;
+              </button>
+              <%}%>
+            </div>
+            <div>
+              <form class="translate-form" action="game/submitAnswer" method="post">
+                <input class="option" id="a4" type="submit" value="<%=optionsWithoutQuestionMark[3]%>">
+                <input type="hidden" name="correctAnswer" value="<%=randomGameData.id%>">
+                <input type="hidden" name="whichLanguage" value="<%=randomGameData.languageName%>">
+                <input type="hidden" name="whichGame" value="<%=whichGame%>">
+                <input type="hidden" name="submittedAnswer" value="<%=options[3]%>">
+              </form>
+              <%if (randomGameData.forward){%>
+              <button type='submit' class='textToVoice-buttonGame option' rel='noreferrer' value='<%=optionsWithoutQuestionMark[3]%>'>
+              <input type="hidden" name="languageCode" value="<%=LanguageCodes[randomGameData.languageName]%>">
+              &#xf028;
+              </button>
+              <%}%>
+            </div>
+          </div>
+
+          <div class="correct-answer-container">
+            <p class="answer-message">That's right!</p>
+            <div class="next-container">
+              <div class="nextSurround">
+              <a href="/game?whichLanguage=<%=languages%>&whichGame=<%=whichGame%>" id="nextLink">
+                <i class="fa fa-chevron-right" id="nextArrow"></i><p id="nextWords">Next</p>
+              </a>
+              </div>
+            </div>
+          </div>
+          <div class="incorrect-answer-container">
+            <div class="next-container">
+              <div class="nextSurround1">
+              <a href="/game?whichLanguage=<%=languages%>&whichGame=<%=whichGame%>" id="nextLink"> 
+                <i class="fa fa-chevron-right" id="nextArrow1"></i><p id="nextWords1">Next</p>
+              </a>
+              </div>
+            </div>
+          </div>
+          <div class="out-of-lives-container">
+              <button id="startOver">
+                <a href="/game?whichLanguage=<%=languages%>&whichGame=<%=whichGame%>">Start Again</a>
+              </button>
+          </div>
+        <%}%>
+        <%if (isComplete){%>
+          <div class="finisHead">Congratulations, you finished all the trivia questions for <%=whichLanguage%></div>
+          <p id="goAgain">Play Again?</p>
+          <div class="start-over-container">
+            <form class="start-over" action="game/startOver" method="post">
+              <input type="hidden" name="whichGame" value="questionsGame1">
+              <input type="hidden" name="whichLanguage" value="<%=whichLanguage%>">
+              <button type="submit" class="again-button">Play Again!</button>
+            </form>
+          </div>
+        <%}%>
+      <%}%>
+      </div>
+      </div>
+    <%}%>
+  </body>
+</html>
+
+
+

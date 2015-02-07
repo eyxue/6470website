@@ -1,0 +1,43 @@
+var LanguageCodes = {"Afrikaans":"af", "Albanian":"sq", "Arabic":"ar", "Azerbaijani":"az", "Basque":"eu",
+"Bengali":"bn", "Belarusian":"be", "Bulgarian":"bg", "Catalan":"ca", "Chinese Simplified":"zh-CN",
+"Chinese Traditional":"zh-TW", "Croatian":"hr", "Czech":"cs", "Danish":"da", "Dutch":"nl",
+"Esperanto":"eo", "Estonian":"et", "Filipino":"tl", "Finnish":"fi", "French":"fr", "Galician":"gl",
+"Georgian":"ka", "German":"de", "Greek":"el", "Gujarati":"gu", "Haitian":"ht", "Hebrew":"iw",
+"Hindi":"hi", "Hungarian":"hu", "Icelandic":"is", "Indonesian":"id", "Irish":"ga", "Italian":"it",
+"Japanese":"ja", "Kannada":"kn", "Korean":"ko", "Latin":"la", "Latvian":"lv", "Lithuanian":"lt",
+"Macedonian":"mk", "Malay":"ms", "Maltese":"mt", "Norwegian":"no", "Persian":"fa", "Polish":"pl",
+"Portuguese":"pt", "Romanian":"ro", "Russian":"ru", "Serbian":"sr", "Slovak":"sk", "Slovenian":"sl",
+"Spanish":"es", "Swahili":"sw", "Swedish":"sv", "Tamil":"ta", "Telugu":"te", "Thai":"th", "Turkish":"tr",
+"Ukrainian":"uk", "Urdu":"ur", "Vietnamese":"vi", "Welsh":"cy", "Yiddish":"yi"};
+
+var CommonPhrases = ["Hello", "Good morning", "Good evening", "Goodnight", "Goodbye", "See you tomorrow",
+"Thank you", "I am sorry", "Excuse me", "What is your name?", "My name is Ben Bitdiddle", "What time is it?",
+"It is 7 o'clock", "Nice to meet you", "Where are you from?", "I am from America", "Yes", "No",
+"Maybe", "Can you say that again?", "What do you think?", "Are you okay?", "I am fine", "What is your job?",
+"Is this correct?", "Where is the bathroom?", "It is over there", "I am a college student",
+"How much does this cost?", "That is mine", "Is this yours?"];
+
+var translate = function(targetLanguageCode, text, callback) {
+	var translation = $.getJSON( "https://www.googleapis.com/language/translate/v2?key=AIzaSyAFnSwf" + 
+		"XuVKTKzJTzVfB1i93z_BZ2Eu0-M&source=en&target=" + 
+		targetLanguageCode + "&q=" + text, function(translateObject) {
+			callback(translateObject.data.translations[0].translatedText);
+  });
+};
+
+var LanguageDataStructure = [];
+for (var a = 0; a < Object.keys(LanguageCodes).length; a++) {
+	for (var b = 0; b < CommonPhrases.length; b++) {
+		(function(a,b) {
+			var newLangObject = {};
+			newLangObject.languageName = Object.keys(LanguageCodes)[a];
+			translate(LanguageCodes[Object.keys(LanguageCodes)[a]], CommonPhrases[b], function(translatedText) {
+			newLangObject.commonPhraseEnglish = CommonPhrases[b];
+			newLangObject.commonPhraseTranslation = translatedText;
+			newLangObject.translationUpVotes = ["Person Uno", "Person Dos"];
+			newLangObject.translationDownVotes = [];
+			});
+			LanguageDataStructure.push(newLangObject);
+		})(a,b);
+	};
+};

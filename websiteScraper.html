@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title></title>
+
+    <script src="./public/libs/jquery-1.11.1.min.js"></script>
+    <script src="./public/libs/jquery.xdomainajax.js"></script>
+    <script src="./public/libs/FileSaver.js"></script>
+</head>
+<body>
+
+<script>
+
+    var wikiURL = "http://en.wikipedia.org/w/api.php?format=json&action=query&titles=Japanese_language&prop=revisions&rvprop=content&callback=?";
+    // $.ajax({
+    //     url: wikiURL,
+    //     type: 'GET',
+    //     cache: false,
+    //     dataType:"application/json",
+    //     success: function(data) {
+    //         // var content = root.find("#content #body-content #mw-content-text");
+    //         console.log(data);
+    //         // var root,allData, body, table;
+    //         // root = $("<div></div>")
+    //         // root.html(data.responseText)
+
+    //         // var content = root.find("#content"); // find all the nodes that have ID "content"
+    //         // var h2s = content.find(".mw-headline"); // search in all "content" nodes for nodes of class ".mw-headline"
+
+    //         // var headerRow = content.find("#mw-content-text table.wikitable tbody tr:eq(0)");
+    //         // var allRows = content.find("#mw-content-text table.wikitable tbody tr:gt(0)");
+
+    //         // var headerString = "";
+    //         // var dataArray = [];
+    //         // var numberOfColumns = 6;
+
+
+    //         // headerString = "year,USCensus,PopulationBureau,UN,HYDE,Maddison"
+    //         // console.log(headerString);
+    //         // dataArray.push(headerString);
+
+
+    //     }
+    // });
+
+    $.getJSON(wikiURL,function(data){
+        console.log(data.query.pages["15606"].revisions[0]["*"]);
+    });
+
+    var saveToFile = function(arrayOfLines, fileName) {
+       /* adds linebreaks at the end*/
+       var blob, blobText;
+       blobText = [arrayOfLines];
+       
+       blob = new Blob(blobText, {
+         type: "text/plain;charset=utf-8"
+       });
+       return saveAs(blob, fileName);
+     };
+
+
+
+</script>
+
+
+</body>
+</html>

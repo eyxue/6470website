@@ -1,0 +1,672 @@
+
+languageArray = ["Afrikaans","Albanian","Arabic","Azerbaijani","Basque","Bengali","Belarusian","Bulgarian","Catalan","Chinese Simplified","Chinese Traditional","Croatian","Czech","Danish","Dutch","Esperanto","Estonian","Filipino","Finnish","French","Galician","Georgian","German","Greek","Gujarati","Hebrew","Hindi","Hungarian","Icelandic","Indonesian","Irish","Italian","Japanese","Kannada","Korean","Latin","Latvian","Lithuanian","Macedonian","Malay","Maltese","Norwegian","Persian","Polish","Portuguese","Romanian","Russian","Serbian","Slovak","Slovenian","Spanish","Swahili","Swedish","Tamil","Telugu","Thai","Turkish","Ukrainian","Urdu","Vietnamese","Welsh","Yiddish"];
+
+okLanguages = ["Afrikaans","Albanian","Arabic","Chinese Simplified","Chinese Traditional","Croatian", "Czech", "Danish", "Dutch", "Esperanto", "Finnish","French","German","Greek",]
+	
+
+triviaQuestions = 
+[
+{
+	question: "According to the Guiness Book, which language has the longest continuous history, extending over 6,000 years to the present day?",
+	language:"Chinese Simplified",
+	answer: "Chinese",
+	options:["Chinese", "Hindi", "French", "Arabic"]
+},
+	{
+	question: "Afrikaans is derived from what other language?",
+	language: "Afrikaans",
+	answer: "Dutch",
+	options:["Dutch", "Swahili", "English", "Arabic"]
+},
+{
+	question: "Afrikaans is the official language of which country?",
+	language:"Afrikaans",
+	answer: "Republic of South Africa",
+	options:["Republic of South Africa", "Namibia", "the Netherlands", "Nigeria"]
+},
+{
+	question: "How many estimated Afrikaans-speakers are there in the world?",
+	language:"Afrikaans",
+	answer: "Between 15 and 23 million",
+	options:["Between 15 and 23 million", "Between 3 and 10 million", "Between 27 and 35 million", "Between 45 and 53 million"]
+},
+{
+	question: "Of South Africa's 42 million people, how many are native speakers of Afrikaans?",
+	language:"Afrikaans",
+	answer: "7 million",
+	options:["33 million", "13 million", "7 million", "25 million"]
+},
+{
+	question: "What are the main dialects of Afrikaans?",
+	language:"Afrikaans",
+	answer: "Northern Cape, Western Cape, Eastern Cape",
+	options:["South African, Namibian, Tswana", "Northern Cape, Western Cape, Eastern Cape" , "Northern, Southern", "Ancient, Modern"]
+},
+{
+	question: "What language family does the Albanian language belong to?",
+	language:"Albanian",
+	answer: "Indo-European",
+	options:["Afro-Asiatic", "Indo-European" , "Caucasian", "Austronesian"]
+},
+{
+	question: "What is Albania called in the Albanian language?",
+	language:"Albanian",
+	answer: "Shqiperia",
+	options:["Përshëndetje", "Amerikë" , "Shqiperia", "Bathë"]
+},
+{
+	question: "How many estimated native Alabania-speakers are there in the world?",
+	language:"Albanian",
+	answer: "7.6 million",
+	options:["12.5 million", "3.3 million", "7.6 million", "25.4 million"]
+},
+{
+	question: "The first audio recording of Albanian was made on 4 April 1914 in Vienna by whom?",
+	language:"Albanian",
+	answer: "Norbert Jokl",
+	options:["Norbert Jokl", "Dubrovnik", "Jernej Kopitar", "Wilhelm Meyer-Lübke"]
+},
+{
+	question: "Albanian is the official language of two countries. One of the countries is Albania, what is the other one?",
+	language:"Albanian",
+	answer: "Kosovo",
+	options:["Kosovo", "Macedonia", "Romania", "Serbia"]
+},
+{
+	question: "Modern Standard Arabic from the language of which text?",
+	language:"Arabic",
+	answer: "The Quran",
+	options:["The Quran", "Kitab al-Fihrist", "Kitab ansab al-ashraf", "One Thousand and One Nights"]
+},
+{
+	question: "Arabic was made the sixth official language of the UN in which year?",
+	language:"Arabic",
+	answer: "1974",
+	options:["1974", "1954", "1966", "1980"]
+},
+{
+	question: "The Arab League is a regional organization of Arab countries in and around North Africa, the Horn of Africa, and Southwest Asia. Excluding Syria, how many members are part of the Arab League?",
+	language:"Arabic",
+	answer: "21",
+	options:["32", "28", "17", "21"]
+},
+{
+	question: "What language family does the Arabic language belong to?",
+	language:"Arabic",
+	answer: "Afro-Asiatic",
+	options:["Afro-Asiatic", "Indo-European" , "Caucasian", "Austronesian"]
+},
+{
+	question: "'Arabic' is used to refer to the Classical Arabic language of the 6th century and its modern descendants excluding ________.",
+	language:"Arabic",
+	answer: "Maltese",
+	options:["Sudanese", "Mesopotamian" , "Levantine", "Maltese"]
+},
+{
+	question: "Azerbaijani is largely mutually intelligible with what other language?",
+	language:"Azerbaijani",
+	answer: "Turkish",
+	options:["Turkish", "Mesopotamian" , "Levantine", "Maltese"]
+},
+{
+	question: "To which country is Azerbaijani NOT indigenous to?",
+	language:"Azerbaijani",
+	answer: "Turkmenistan",
+	options:["Northern Iran", "Azerbaijan", "Georgia", "Turkmenistan"]
+},
+{
+	question: "The Azerbaijani language is regulated by which group?",
+	language:"Azerbaijani",
+	answer: "The Azerbaijan National Academy of Sciences",
+	options:["The Azerbaijan National Academy of Sciences", "The Azerbaijan National School of Nomenclature", "The Milli Majlis of the Republic of Azerbaijan", "Massachusetts Institute of Technology"]
+},
+{
+	question: "Different Azerbaijani groups write the Azerbaijani language different ways. Which one of these is not used to write Azerbaijani?",
+	language:"Azerbaijani",
+	answer: "Devangari Script",
+	options:["Latin script", "Cyrillic script", "Perso-Arabic script", "Devangari Script"]
+},
+{
+	question: "Azerbaijani language is closely related to:",
+	language:"Azerbaijani",
+	answer: "Turkish",
+	options:["Turkish", "Russian", "Arabic", "Persian"]
+},
+{
+	question: "The Basque language is native to Spain and __________.",
+	language:"Basque",
+	answer: "France",
+	options:["France", "Italy", "Portugal", "Germany"]
+},
+{
+	question: "Basque is the official language of the Basque Autonomous Community and __________.",
+	language:"Basque",
+	answer: "Navarre",
+	options:["Navarre", "Castile and Leon", "Madrid", "La Rioja"]
+},
+{
+	question: "Basque belongs to which language family?",
+	language:"Basque",
+	answer: "Language Isolate",
+	options:["Afro-Asiatic", "Indo-European" , "Language Isolate", "Caspian"]
+},
+{
+	question: "A standardized form of the Basque language, called Euskara Batua, was developed by whom in the late 1960s?",
+	language:"Basque",
+	answer: "Basque Language Academy",
+	options:["Spanish National Academy of Lingustics", "Basque Academy of Nomenclature" , "Basque Academy of Sciences", "Basque Language Academy"]
+},
+{
+	question: "Apart from standardized version, there are five main Basque dialects: Bizkaian, Gipuzkoan, and Upper Navarrese in Spain, and Navarrese–Lapurdian and ___________ in France.",
+	language:"Basque",
+	answer: "Zuberoan",
+	options:["Zuberoan", "Navarrese-Francais" , "Northern Bizkaian", "Euskaltzaindian"]
+},
+{
+	question: "In 1999, UNESCO declared February 21 as the _________________ in recognition of the deaths and people sacrificing their life for their mother language Bengali during the Bengali Language Movement on the same date in 1952.",
+	language:"Bengali",
+	answer: "International Mother Language Day",
+	options:["Bengali Language Movement Remeberance Day", "International Bengali Language Day" , "International Mother Language Day", "Bengali Independence Day"]
+},
+{
+	question: "Internationally, how many native Bengali speakers are there?",
+	language:"Bengali",
+	answer: "210 million",
+	options:["210 million", "320 million" , "130 million", "420 million"]
+},
+{
+	question: "Bengali is native to some regions of India and which country?",
+	language:"Bengali",
+	answer: "Bangladesh",
+	options:["Bangladesh", "Nepal" , "Bhutan", "Pakistan"]
+},
+{
+	question: "Bengali is part of which language group?",
+	language:"Bengali",
+	answer: "Indo-European",
+	options:["Afro-Asiatic", "Indo-European" , "Language Isolate", "Caspian"]
+},
+{
+	question: "Bengali Script is categorized as which type of writing system?",
+	language:"Bengali",
+	answer: "Abugida",
+	options:["Abugida", "Alphabetic" , "Logographic/Syllabic", "Ahjad"]
+},
+{
+	question: "Prior to Belarus gaining its independence from the Soviet Union in 1991, the language was known in English as _______________.",
+	language:"Belarusian",
+	answer: "Byelorussian",
+	options:["Belese", "Byelorussian" , "Belausian Russian", "Polish Russian"]
+},
+{
+	question: "Prior to Belarus gaining its independence from the Soviet Union in 1991, the language was known in English as _______________.",
+	language:"Belarusian",
+	answer: "Byelorussian",
+	options:["Belese", "Byelorussian" , "Belausian Russian", "Polish Russian"]
+},
+{
+	question: "Belarusian is part of which language group?",
+	language:"Belarusian",
+	answer: "Indo-European",
+	options:["Afro-Asiatic", "Indo-European" , "Language Isolate", "Caspian"]
+},
+{
+	question: "Besides the literary norm, there exist two main dialects of the Belarusian language, which are:",
+	language:"Belarusian",
+	answer: "the North-Eastern and the South-Western",
+	options:["the Eastern and the Western", "the North-Eastern and the South-Western" , "the Polish and the Russian", "the Inner and the Outer"]
+},
+{
+	question: "The Belarusian language is regulated by which group?",
+	language:"Belarusian",
+	answer: "the North-Eastern and the South-Western",
+	options:["National Academy of Sciences of Belarus", "Belarus Academy of Nomenclature" , "Belarus National Academy of the Arts", "Belarus Language Academy"]
+},
+{
+	question: "Bulgarian is part of which language group?",
+	language:"Bulgarian",
+	answer: "Indo-European",
+	options:["Afro-Asiatic", "Indo-European" , "Language Isolate", "Caspian"]
+},
+{
+	question: "Bulgarian is the official language of Bulgaria and a recognized minority language in the following counrties EXCEPT:",
+	language:"Bulgarian",
+	answer: "Turkey",
+	options:["Hungary", "Romania" , "Turkey", "Serbia"]
+},
+{
+	question: "Bulgarian became one of the official languages of the European Union with the accession of Bulgaria to the European Union on 1 January of which year?",
+	language:"Bulgarian",
+	answer: "2007",
+	options:["1999", "2007", "2001", "1993"]
+},
+{
+	question: "The Bulgarian language is regulated by which group?",
+	language:"Bulgarian",
+	answer: "Bulgarian Academy of Sciences",
+	options:["National Academy of Linguistics of Bulgaria", "Bulgarian Academy of Sciences", "Bulgarian National Academy of the Arts", "Bulgarian Language Academy"]
+},
+{
+	question: "The estimated number of native Bulgarian speakers is:",
+	language:"Bulgarian",
+	answer: "7 million",
+	options:["13 million", "7 million", "21 million", "2 million"]
+},
+{
+	question: "Catalan is the only official language of which nation?",
+	language:"Catalan",
+	answer: "Andorra",
+	options:["Catalonia", "Andorra", "Italy", "Spain"]
+},
+{
+	question: "The dialect of Catalan which is also used as standard form of Catalan is: ",
+	language:"Catalan",
+	answer: "Valencian",
+	options:["Valencian", "Balearian", "Murcian", "Spanish"]
+},
+{
+	question: "Catalan is recognized as an official language in the following regions of Spain EXCEPT:  ",
+	language:"Catalan",
+	answer: "Aragon",
+	options:["Catalonia", "the Balearic Islands", "the Valencian Community", "Aragon"]
+},
+{
+	question: "In terms of vocabulary, pronunciation, and grammar, Catalan is most different from which of the following languages/language types?",
+	language:"Catalan",
+	answer: "Portuguese",
+	options:["Occitan", "French", "Gallo-Italic languages", "Portuguese"]
+},
+{
+	question: "In the Alicante province, Catalan is being replaced by which of the following languages?",
+	language:"Catalan",
+	answer: "Spanish",
+	options:["Italian", "French", "German", "Spanish"]
+},
+{
+	question: "According to the Guiness Book, which language has the longest continuous history, extending over 6,000 years to the present day?"
+	language:"Chinese Simplified",
+	answer: "Chinese",
+	options:["Chinese", "Hindi", "French", "Arabic"]
+},
+{
+	question: "Simplified Chinese is officially used in the People's Republic of China and what other country?"
+	language:"Chinese Simplified",
+	answer: "Singapore",
+	options:["Macau", "Hong Kong", "Singapore", "Taiwan"]
+},
+{
+	question: "One way of simplifying tradition Chinese is to replace a character with another existing character that sounds the same or similar. Which of the following is an example of that?"
+	language:"Chinese Simplified",
+	answer: "穀 → 谷",
+	options:["廣 → 广", "門 → 门", "竈 → 灶", "穀 → 谷"]
+},
+{
+	question: "Chinese is an official language of which of the following international organizations?"
+	language:"Chinese Simplified",
+	answer: "the United Nations",
+	options:["the United Nations", "NATO", "the WTO", "the ICRC"]
+},
+{
+	question: "How many official rounds of character simplications were there as of 2014?"
+	language:"Chinese Simplified",
+	answer: "2",
+	options:["1", "2", "3", "4"]
+},
+{
+	question: "The earliest examples of Chinese are divinatory inscriptions on ____________ from around 1250 BCE in the late Shang dynasty."
+	language:"Chinese Traditional",
+	answer: "Oracle bones",
+	options:["Oracle bones", "Stone tablets", "Cave walls", "Bamboo sticks"]
+},
+{
+	question: "Traditional Chinese characters the standardized character sets of the following countries EXCEPT:"
+	language:"Chinese Traditional",
+	answer: "People's Republic of China",
+	options:["Taiwan", "Hong Kong", "Macau", "People's Republic of China"]
+},
+{
+	question: "Standard Chinese is a standardized form of spoken Chinese based on which dialect of Mandarin?"
+	language:"Chinese Traditional",
+	answer: "Beijing dialect",
+	options:["Beijing dialect", "Shanghai dialect", "Guangdong dialect", "Dalian dialect"]
+},
+{
+	question: "There is estimated to be hundreds of mutually unintelligible varieties of Chinese. After Mandarin, which form of Chinese is the most common?"
+	language:"Chinese Traditional",
+	answer: "Wu",
+	options:["Min", "Yue", "Jin", "Wu"]
+},
+{
+	question: "Chinese is a recognized minority language in the following countries EXCEPT:",
+	language:"Chinese Traditional",
+	answer: "Japan",
+	options:["Canada", "Malaysia", "United States", "Japan"]
+},
+{
+	question: "French is the fourth-most widely spoken mother tongue in the European Union. It is also the third-most widely understood language in the EU. Estimated, how many people internationally speak French?",
+	language:"French",
+	answer: "338 million",
+	options:["338 million", "420 million", "137 million", "567 million"]
+},
+{
+	question: "French is the official language of how many countries?",
+	language:"French",
+	answer: "29",
+	options:["29", "17", "35", "8"]
+},
+{
+	question: "French has a long history as an international language of commerce, diplomacy, literature, and scientific standards and is an official language of many international organizations including the following EXCEPT:",
+	language:"French",
+	answer: "None of the Above",
+	options:["the United Nations", "NATO", "the WTO", "None of the Above"]
+},
+{
+	question: "Most second-language French speakers reside in:",
+	language:"French",
+	answer: "Africa",
+	options:["Africa", "North America", "South America", "Europe"]
+},
+{
+	question: "The community of French-speaking countries is called:",
+	language:"French",
+	answer: "la francophonie",
+	options:["la francophonie", "les francophones", "les parlez-françaises", "le français"]
+},
+{
+	question: "The French language is regulated by which group?",
+	language: "French",
+	answer: "Académie française",
+	options:["Académie française", "Académie des sciences", "Académie internationale", "Ecole Normale Supérieure"]
+},
+{
+	question: "German is the only official language in the following countries EXCEPT:",
+	language: "German",
+	answer: "Luxembourg",
+	options:["Germany", "Austria", "Liechtenstein", "Luxembourg"]
+},
+{
+	question: "The German language is regulated by: ",
+	language: "German",
+	answer: "None of the above",
+	options:["Council for German Orthography", "National Academy of the German Language", "German Academy of Sciences", "German Institute of Language"]
+},
+{
+	question: "English has taken many loanwords from German, often without any change of spelling. Which of the following is NOT a German loanword?",
+	language: "German",
+	answer: "jail (prison, penitentiary)",
+	options:["Blitz (flash / lightning)", "edelweiss (edelweiss flower)", "wanderlust (desire, pleasure, or inclination to travel or walk)", "jail (prison, penitentiary)"]
+},
+{
+	question: "The use and learning of the German language are promoted by the following organizations EXCEPT: ",
+	language: "German",
+	answer: "Deutsche Akademie der Wissenschaften",
+	options:["Goethe-Institut", "Verein Deutsche Sprache", "Deutsche Akademie der Wissenschaften" "Deutsche Welle"]
+},
+{
+	question: "Internationally, how many estimated native German speakers are there?",
+	language: "German",
+	answer: "120 million",
+	options:["120 million", "320 million", "220 million", "20 million"]
+},
+{
+	question: "After the Fall of Tarentum (272 BC), the Romans began hellenizing, or adopting features of Greek culture, including the borrowing of Greek words. This hellenization led to the addition of which two letters to the alphabet to represent Greek sounds?",
+	language: "Greek",
+	answer: "Y/Z",
+	options:["Y/Z", "X/K", "V/T", "A/B"]
+},
+{
+	question: "The Hindi language is regulated by:",
+	language: "Hindi",
+	answer: "Central Hindi Directorate",
+	options:["Central Hindi Directorate", "Academy of Hindi Language", "Hindi Institute of Sciences", "National Association of Hindi Language"]
+},
+{
+	question: "Linguistically, Hindi is identical to what other language?",
+	language: "Hindi",
+	answer: "Urdu",
+	options:["Urdu", "Punjabi", "Braj Bhasha", "Dakhini"]
+},
+{
+	question: "Internationally, how many estimated native Hindi speakers are there?",
+	language: "Hindi",
+	answer: "180 million",
+	options:["180 million", "270 million", "320 million", "20 million"]
+},
+{
+	question: "The Hindi language is native to the following EXCEPT:",
+	language: "Hindi",
+	answer: "Bangladesh",
+	options:["India", "Significant communities in South Africa", "Nepal", "Bangladesh"]
+},
+{
+	question: "The Hindi language is written in what kind of script?",
+	language: "Hindi",
+	answer: "Devanagari script",
+	options:["Anga Script", "Gurmukhi script", "Devanagari script", "Pollard script"]
+},
+{
+	question: "Italian is the official language of the following countries EXCEPT: ",
+	language: "Italian",
+	answer: "Croatia",
+	options:["Switzerland", "Croatia", "San Marino", "Italy"]
+},
+{
+	question: "What would come to be thought of as Italian was first formalized in the early fourteenth century through the works of Tuscan writer ______________, written in native Florentine",
+	language: "Italian",
+	answer: "Dante Alighieri",
+	options:["Giovanni Boccaccio", "Pietro Bembo", "Alessandro Manzoni", "Dante Alighieri"]
+},
+{
+	question: "Italian is a Romance language and a descendent of:",
+	language: "Italian",
+	answer: "Vulgar Latin",
+	options:["Modern Latin", "Vulgar Latin", "Classical Latin", "Medieval Latin"]
+},
+{
+	question: "How many people are estimated to speak Italian (all varieties)?",
+	language: "Italian",
+	answer: "85 million",
+	options:["5 million", "132 million", "85 million", "217 million"]
+},
+{
+	question: "Among the Romance languages, Italian is the closest to Latin in terms of what?",
+	language: "Italian",
+	answer: "Vocabulary",
+	options:["Vocabulary", "Grammar", "Pronounciation", "Culture"]
+},
+{
+	question: "The Italian language adopted after the unification of Italy is based on what language, which beforehand spoken mostly by the upper class of Florentine society?",
+	language: "Italian",
+	answer: "Tuscan",
+	options:["Sicilian", "Calabrian", "Neapolitan", "Tuscan"]
+},
+{
+	question: "The Japanese language can express differing levels in social status. The differences in social position are determined by a variety of factors including job, age, experience, or even psychological state. Which of the following forms of Japanese would be used to speak to one of higher status?",
+	language: "Japanese",
+	answer: "tanshukugo (短縮語)",
+	options:["teineigo (丁寧語)", "sonkeigo (尊敬語)", "kenjōgo (謙譲語)", "tanshukugo (短縮語)"]
+},
+{
+	question: "'Kana' is used to refer to the following Japanese scripts EXCEPT:",
+	language: "Japanese",
+	answer: "Kanji",
+	options:["Katakana", "Kanji", "Hiragana", "None of the above"]
+},
+{
+	question: "Katakana is used for the following situations EXCEPT:",
+	language: "Japanese",
+	answer: "Kanji",
+	options:["Loan words from other languages", "Emphasis", "To represent onomatopoeia", "Particles"]
+},
+{
+	question: "The estimated number of native Japanese speakers is: ",
+	language: "Japanese",
+	answer: "125 million",
+	options:["125 million", "320 million", "97 million", "212 million"]
+},
+{
+	question: "Japanese is the official language of Japan and is a recognized minority language in which country?",
+	language: "Japanese",
+	answer: "Palau",
+	options:["People's Republic of China", "United States of America", "Palau", "Brazil"]
+},
+{
+	question: "Korean is an official language of the following EXCEPT: ",
+	language: "Korean",
+	answer: "Commonwealth of Independent States",
+	options:["South Korea", "North Korea", "Yanbian (People's Republic of China)", "Commonwealth of Independent States"]
+},
+{
+	question: "In the 15th century, ________________ commissioned a national writing system called Hangeul.",
+	language: "Korean",
+	answer: "Sejong the Great",
+	options:["General Ik-hwan", "Sun Myung Moon", "Kim Sinyong", "Sejong the Great"]
+},
+{
+	question: "The English word "Korean" is derived from the first Korean dynasty known to Western countries. What was the name of this dynasty?",
+	language: "Korean",
+	answer: "Goryeo (고려)",
+	options:["Joseon (조선)", "Goryeo (고려)", "Balhae (발해)", "Silla (신라)"]
+},
+{
+	question: "The estimated number of native Korean speakers is: ",
+	language: "Korean",
+	answer: "77 million",
+	options:["125 million", "12 million", "77 million", "212 million"]
+},
+{
+	question: "In South Korea, the language is most often called Hangungmal (한국말). More formally, what may it also be called?",
+	language: "Korean",
+	answer: "Hangugeo (한국어)",
+	options:["Hanguk (한국)", "Goryeo Mal (고려말)", "Saturi (사투리)", "Hangugeo (한국어)"]
+},
+{
+	question: "Latin is an official language of the following EXCEPT:",
+	language: "Latin",
+	answer: "Italy",
+	options:["Vatican City", "Sovereign Military Order of Malta", "Italy", "None of the above"]
+},
+{
+	question: "Latin is regulated by:",
+	language: "Latin",
+	answer: "Pontifical Academy for Latin",
+	options:["Pontifical Academy for Latin", "International Academy of Latin Studies", "Italian National Academy of Sciences", "International Institute of Classical Studies"]
+},
+{
+	question: "A number of Latin terms are used in legal terminology and legal maxims. Which of the following is NOT of Latin origin?",
+	language: "Latin",
+	answer: "Italy",
+	options:["compos mentis (having command of mind)", "actus reus (guilty act)", "subpoena (under penalty)", "attorney (one who advises or represents others)"]
+},
+{
+	question: "Romance languages are direct descendents of which type of Latin?",
+	language: "Latin",
+	answer: "Vulgar Latin",
+	options:["Vulgar Latin", "Medieval Latin", "Old Latin", "Renaissance Latin"]
+},
+{
+	question: "After the Fall of Tarentum (272 BC), the Romans began hellenizing, or adopting features of Greek culture, including the borrowing of Greek words. This hellenization led to the addition of which two letters to the alphabet to represent Greek sounds?",
+	language: "Latin",
+	answer: "Y/Z",
+	options:["Y/Z", "X/K", "V/T", "A/B"]
+},
+{
+	question: "In total, how many Russian speakers are there (estimated)?",
+	language: "Russian",
+	answer: "260 million",
+	options:["260 million", "160 million", "60 million", "360 million"]
+},
+{
+	question: "Russian is an official language in the following countries EXCEPT:",
+	language: "Russian",
+	answer: "Romania",
+	options:["Ukraine", "Belarus", "Kazakhstan", "Russia"]
+},
+{
+	question: "Modern standard Russian arose in the beginning of the 18th century with the modernization reforms of the Russian state under the rule of Peter the Great, and was developed from which dialect?",
+	language: "Russian",
+	answer: "Moscow dialect",
+	options:["St. Petersburg dialect", "Vologda dialect", "Moscow dialect", "None of the above"]
+},
+{
+	question: "The Russian proverb 'Бери́сь дру́жно, не бу́дет гру́зно' (Beris' druzhno, ne budet gruzno.) directly translates to '[If all of us] take hold of [it] together, it won't feel heavy.' This is equivalent to which English saying?",
+	language: "Russian",
+	answer: "Many hands make light work",
+	options:["Many hands make light work", "It only seems to be easy", "All good comes in threes", "We are to learn as long as we live"]
+},
+{
+	question: "In the 19th century, the Russian language was often called ________________ to distinguish it from Belarusian, then called 'White Russian' and Ukrainian, then called 'Little Russian'.",
+	language: "Russian",
+	answer: "'Great Russian'",
+	options:["'Almighty Russian'", "'Great Russian'", "'Real Russian'", "'Original Russian'"]
+},
+{
+	question: "Spanish is the official language of how many countries?",
+	language:"Spanish",
+	answer: "20",
+	options:["20", "29", "13", "8"]
+},
+{
+	question: "Spanish is the official language of the following organizations EXCEPT:",
+	language:"Spanish",
+	answer: "NATO",
+	options:["the United Nations", "NATO", "the African Union", "The Union of South American Nations"]
+},
+{
+	question: "In Spain and in some other parts of the Spanish-speaking world, Spanish is called ___________, as well as español (Spanish)",
+	language:"Spanish",
+	answer: "Castellano (Castilian)",
+	options:["Ladino (Judaeo-Spanish)", "Galego (Galician)", "Asturianu (Asturian)", "Castellano (Castilian)"]
+},
+{
+	question: "Which of the following countries has the highest number of Spanish speakers?",
+	language:"Spanish",
+	answer: "Mexico",
+	options:["Mexico", "United States", "Colombia", "Spain"]
+},
+{
+	question: "The Spanish language is regulated by:",
+	language:"Spanish",
+	answer: "Asociación de Academias de la Lengua Española",
+	options:["Asociación de Academias de la Lengua Española", "Real Academia Española", "Instituto Cervantes", "Asociación de Academias de la Ciencia"]
+},
+]
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+

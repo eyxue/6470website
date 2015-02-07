@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <link rel="stylesheet" type="text/css" href="./libs/bootstrap/css/bootstrap.css">
+    <link rel='stylesheet' href='/stylesheets/style.css' />
+    <link href="//maxcdn.bootstrapcdn.com/font-awesome/4.2.0/css/font-awesome.min.css" rel="stylesheet">
+    <link rel="stylesheet" type="text/css" href="http://fonts.googleapis.com/css?family=Open+Sans|Lato:300, 400, 700">
+    <link rel="stylesheet" type="text/css" href="/libs/jquery-jvectormap-2.0.1.css">
+    <script src="./libs/jquery-1.11.1.min.js"></script>
+    <script src="./libs/jquery-ui.min.js"></script>
+    <script src="./libs/jquery-jvectormap-2.0.1.min.js"></script>
+    <script src="./libs/jquery-jvectormap-world-mill-en.js"></script>
+    <script src="./libs/bootstrap/js/bootstrap.min.js"></script>
+    <script src="./javascripts/languageScript.js"></script>
+  </head>
+  <title>LinguaGem</title>
+  <body>
+	<div class="nav-container">
+    <a href="./game" id="gameNav">play</a>
+    <a href="./" id="homeNav">LinguaGem</a>
+    <a href="./language" id="languageNav">learn</a>
+  </div>
+  <div class="langContainer">
+  <div class="languages">
+    <div class="langHead">Click language to <i>learn</i></div>
+    <div class="langTable">
+      <%for (var i=0; i<8; i++){%>
+        <div class="row">
+          <%for (var j=i*8; j<(i*8)+8; j++){%>
+            <%if (j<61){%>
+              <div class="item">
+                <div class="language-container">
+                  <form class="select-language-form" action="language/selectLanguage" method="post">
+                    <input type="hidden" name="whichLanguage" value="<%=languageArray[j]%>">
+                      <%if (languageArray[j]==="Chinese Simplified"){%>
+                        <div class="button-container "><button class="language-button" type="submit">Chinese(S)</button></div>
+                      <%}else if (languageArray[j]==="Chinese Traditional"){%>
+                        <div class="button-container "><button class="language-button" type="submit">Chinese(T)</button></div>
+                      <%}else{%>
+                        <div class="button-container "><button class="language-button" type="submit"><%=languageArray[j]%></button></div>
+                      <%}%>
+                  </form>
+                </div>
+              </div>
+            <%}%>
+          <%}%>
+        </div>
+      <%}%>
+    </div>
+  </div>
+  <div id='langData'></div>
+  </div>
+  </body>
+</html>

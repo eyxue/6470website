@@ -1,0 +1,71 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <link rel="stylesheet" type="text/css" href="./libs/bootstrap/css/bootstrap.css">
+    <link rel='stylesheet' href='/stylesheets/style.css' />
+    <link href="//maxcdn.bootstrapcdn.com/font-awesome/4.2.0/css/font-awesome.min.css" rel="stylesheet">
+    <link rel="stylesheet" type="text/css" href="http://fonts.googleapis.com/css?family=Open+Sans|Lato:300, 400, 700">
+    <script src="./libs/jquery-1.11.1.min.js"></script>
+    <script src="./libs/jquery-ui.min.js"></script>
+    <script src="./libs/bootstrap/js/bootstrap.min.js"></script>
+  </head>
+  <title>Linguagem</title>
+  <body>
+  <div class="nav-container">
+    <a href="./game" id="gameNav">play</a>
+    <a href="./" id="homeNav">LinguaGem</a>
+    <a href="./language" id="languageNav">learn</a>
+  </div>
+  <div class="profileContainer">
+  <div class="profile-content">
+    <%if (firstTime){%>
+      <div class="profileHead">Welcome to LinguaGem, <%=username%>!</div>
+      <div class="profileRest">
+      <p id="start">Get Started:</p>
+      <div class="redirects">
+            <a href="/game">
+              <div id='playRedirect'>Play</div>
+            </a>
+            <a href="/language">
+              <div id='learnRedirect'>Learn</div>
+            </a>
+      </div>
+      </div>
+    <%}else{%>
+      <div class="profileHead">Hi, <%=username%>! Here's your progress:</div>
+      <div class="profileRest">
+      <div class="highScores">
+        <p class="scoresTitle">High Scores</p>
+        <hr id='profBreak' />
+        <p id="scores"><i id='high1'><%=highScore1.score*25%></i>   Languages: <%=highScore1.languages%> <br />  
+        <i id='high2'><%=highScore2.score*25%></i>   Languages: <%=highScore2.languages%> <br />
+        <i id='high3'><%=highScore3.score*25%></i>   Languages: <%=highScore3.languages%></p>
+      </div>
+      <p id="progressTitle">Learning Progress</p>
+      <hr id='profBreak' />
+      <%languageArray=Object.keys(languageData)%>
+      <div class="progress-table-container">
+      <div class="progess-table">
+        <%for (var i=0;i<Math.floor(languageArray.length/7)+1;i++){%>
+          <div class="progress-row">
+            <%for (var j=0;j<Math.min(languageArray.length-i*7,7);j++){%>
+              <div class="game-progress">
+                <p id="progress-language"><%=languageArray[i*7+j]%></p>
+                <progress value="<%=languageData[languageArray[i*7+j]].decimalComplete%>" max="1"></progress>
+                <p id="percentage"><%=(languageData[languageArray[i*7+j]].decimalComplete*100).toFixed(2)%>%</p>
+                <!--<p>Completions: <%=languageData[languageArray[i*7+j]].numCompletions%></p>-->
+                <button class="keep-going"><a href="/game?whichLanguage=<%=languageArray[i*7+j]%>&whichGame=questionsGame2">KEEP GOING   </a><i class="fa fa-chevron-right"></i></button>
+              </div>
+            <%}%>
+          </div>
+        <%}%>
+      </div>
+      <hr id='profBreak' />
+      <a href="./logout"><div id="logoutNav">Logout</div></a>
+      </div>
+      </div>
+    <%}%>
+  </div>
+  </div>
+  </body>
+</html>
